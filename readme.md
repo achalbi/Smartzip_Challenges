@@ -36,5 +36,5 @@ Time taken for excecution of test data with 2 Million records is as follows
   - Nodejs:  < 8secs
   - Python: ~30secs
   - Spark in Python: 
-    -- partioned files: < 13 secs
-    -- single file: ~ 25 secs
+    - partioned files: < 13 secs
+    - single file: ~ 25 secs
