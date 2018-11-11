@@ -22,6 +22,7 @@ contacts_df = sqlContext.read.csv(file_path, header=False, schema=schema)
 pattern = "^[A-Za-z0-9 ;&'-]+$/"
 contacts_df = contacts_df.withColumn("Flag", contacts_df.firstname.rlike(pattern) & contacts_df.lastname.rlike(pattern))
 
+print(contacts_df.show())
 ouput_file_path = "../Downloads/spark-flagged-edi-contacts.csv"
 contacts_df.coalesce(1).write.csv(ouput_file_path, header=True)
 
