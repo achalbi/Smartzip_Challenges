@@ -45,22 +45,25 @@ const stream = fs.createReadStream('edi-contacts.csv')
     // Match pattern to set flag
     // Pattern: allow alphanumeric characters, single space, semi-colon, single quote, & sign, and hyphen 
     // no special characters are allowed other than the above mentioned.
-      const pattern = /^[A-Za-z0-9 ;&'-]+$/;
+      const pattern = /^[A-Za-z0-9 ;&.'-]+$/;
       row.flag = pattern.test(row.firstname) && pattern.test(row.lastname);
-      row.raw_firstname = ''
-      row.raw_lastname = ''
+      // row.raw_firstname = ''
+      // row.raw_lastname = ''
 
       // Sanitizing Firstname and Lastname
       if (row.flag === false){
-        const sanitizing_pattern = /[^A-Za-z0-9& ;'-]/g;
-        row.raw_firstname = String(row.firstname)
-        row.raw_lastname = String(row.lastname)
-        row.firstname = String(row.firstname).replace(sanitizing_pattern, '');
-        row.lastname = String(row.lastname).replace(sanitizing_pattern, '');
+        // const sanitizing_pattern = /[^A-Za-z0-9& ;'-]/g;
+        // row.raw_firstname = String(row.firstname)
+        // row.raw_lastname = String(row.lastname)
+        // row.firstname = String(row.firstname).replace(sanitizing_pattern, '');
+        // row.lastname = String(row.lastname).replace(sanitizing_pattern, '');
+
+        writer.write(row);
+
       }
       
-      if (row.id != 'id'){ // skip first row heading
-        // write in stream also getting converted from json object to CSV
-        writer.write(row);
-      }
+      // if (row.id != 'id'){ // skip first row heading
+      //   // write in stream also getting converted from json object to CSV
+      //   writer.write(row);
+      // }
   }
