@@ -1,4 +1,3 @@
-import pandas as pd
 import re
 import time
 from pyspark import SparkConf, SparkContext, SQLContext
