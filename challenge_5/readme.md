@@ -18,11 +18,11 @@ Note: we need to pull data out of the DB using the above data generator
 
 https://docs.aws.amazon.com/cli/latest/userguide/installing.html
 
-```python
+```
 $ pip install awscli --upgrade --user
 ```
 
-```python
+```
 $ aws configure
 ```
 
