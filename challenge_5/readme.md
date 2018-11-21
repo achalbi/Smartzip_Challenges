@@ -14,8 +14,8 @@ Note: we need to pull data out of the DB using the above data generator
 ## Solutions:
 
 
-Installing AWS CLI
-----
+#### Installing AWS CLI
+
 https://docs.aws.amazon.com/cli/latest/userguide/installing.html
 
 ```python
@@ -33,29 +33,37 @@ Default region name [None]: us-east-1
 Default output format [None]: json
 ```
 
-AWS SDK for Python (Boto3)
-------
+#### AWS SDK for Python (Boto3)
+
 https://aws.amazon.com/sdk-for-python/
 
-Install Boto
--------
-```python
+#### Install Boto
+
+```
 $ pip install boto3
 ```
 
-### Solution 1: Kiner package
+
+## Solution 1: Kiner package
 
 Set Kinesis stream name: (smartzip-challenge-5)
 
-Run
----
-```python
+#### Run
+
+```
 python3 kiner_producer_kiner.py
 ```
-### Solution 2: Kinesis Aggregator/Deaggregator package
 
-Run
----
+
+## Solution 2: Kinesis Aggregator/Deaggregator package
+
+#### Run
 ```python
 python3 kiner_publisher.py <stream name> <region>
 ```
+
+
+## References:
+
+https://github.com/awslabs/kinesis-aggregation
+
